@@ -1,0 +1,25 @@
+Manual de Execução (Passo a Passo)
+
+1️⃣ Preparação das PastasCertifique-se de que a estrutura de pastas existe:
+C:\Users\leandro.petruz\selects_novo\analise_lpa_vpa\ (Scripts de download)
+C:\Users\leandro.petruz\selects_novo\ (Script main.py)
+
+2️⃣ Passo 1: Download dos Dados Históricos (DFP)Execute o script que baixa os dados anuais de 2024.bash1python analise_lpa_vpa\analise_fundamentalista_cvm_2425_gera_arquivos_dfp.pypython analise_lpa_vpa\analise_fundamentalista_cvm_2425_gera_arquivos_dfp.py
+
+3️⃣ Passo 2: Download dos Dados Trimestrais (ITR)Execute o script que baixa os dados mais recentes de 2025.bash1python analise_lpa_vpa\analise_fundamentalista_cvm_2425_gera_arquivos_itr.pypython analise_lpa_vpa\analise_fundamentalista_cvm_2425_gera_arquivos_itr.py
+
+4️⃣ Passo 3: Geração do Relatório Final (Main Dinâmico)Execute o novo script main.py. 
+Ele vai ler os arquivos gerados nos passos anteriores e buscar os preços e o número de ações ao vivo na internet.bash1python main.pypython main.py
+
+    precisa mexer em 3 lugares se quiser trocar uma empresa:
+
+        Código CVM: Nos scripts dfp.py e itr.py, mude o código na lista empresas (ex: '022357').
+
+        CNPJ: No script itr.py, mude o CNPJ na lista lista_cnpjs.
+
+        Ticker e Nome: No main.py, adicione o ticker na lista tickers e o mapeamento no dicionário ticker_para_empresa.
+
+O número de ações você não precisa mais procurar! O script fará isso por você.
+Resumindo
+Unidade de Medida: O script agora multiplica os valores da CVM por 1.000 para compensar o fato de que os balanços são publicados em milhares de Reais, enquanto o número de ações do Yahoo é o valor absoluto.
+Automação: Toda vez que você rodar o main.py, ele pegará o número de ações mais atualizado (considerando desdobramentos ou novas emissões que o Yahoo já tenha processado).
