@@ -7,7 +7,7 @@ import numpy as np
 print("=== INICIANDO PROCESSAMENTO DINÂMICO ===")
 
 # 1. CONFIGURAÇÃO DE CAMINHOS
-caminho_arquivos = r'C:\Users\leandro.petruz\selects_novo\tcc\itr'
+caminho_arquivos = r'C:\temp\itr'
 arquivos_xls = [os.path.join(caminho_arquivos, f) for f in os.listdir(caminho_arquivos) if f.endswith(('.xls', '.xlsx'))]
 
 # 2. CARREGAMENTO DE DADOS (BPP e DRE)
@@ -167,7 +167,7 @@ for tkt in tickers:
         print(f"✗ Erro ao processar {tkt}: {e}")
 
 # 6. SALVAR RESULTADOS
-caminho_res = r'C:\Users\leandro.petruz\selects_novo\tcc\resultados'
+caminho_res = r'C:\temp\resultados'
 os.makedirs(caminho_res, exist_ok=True)
 resultados_finais.to_excel(os.path.join(caminho_res, 'LPA_VPA_Dinamico.xlsx'))
 

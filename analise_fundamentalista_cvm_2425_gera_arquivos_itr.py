@@ -9,7 +9,7 @@ import os
 start_time = time.time()
 
 # Definir o caminho onde os arquivos serão salvos
-caminho_salvar = r'C:\Users\leandro.petruz\selects_novo\tcc\itr'
+caminho_salvar = r'C:\temp\itr'
 
 # Criar o diretório se não existir
 os.makedirs(caminho_salvar, exist_ok=True)

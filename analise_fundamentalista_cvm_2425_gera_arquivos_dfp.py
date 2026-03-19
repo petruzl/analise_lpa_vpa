@@ -6,7 +6,7 @@ import time
 import os
 
 # Definir o caminho onde os arquivos serão salvos
-caminho_salvar = r'C:\Users\leandro.petruz\selects_novo\tcc\dfp'
+caminho_salvar = r'C:\temp\dfp'
 
 # Criar o diretório se não existir
 os.makedirs(caminho_salvar, exist_ok=True)
@@ -60,10 +60,10 @@ for j in empresas:
     c = 0
     lista_df = []
     for k in demonstrativos:
-        link = 'https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2024.zip' 
+        link = 'https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2025.zip' 
         r = requests.get(link)
         zf = zipfile.ZipFile(io.BytesIO(r.content))
-        arquivo = 'dfp_cia_aberta_' + str(k) + '_con_2024.csv' 
+        arquivo = 'dfp_cia_aberta_' + str(k) + '_con_2025.csv' 
         zf = zf.open(arquivo)
         lines = zf.readlines()
         lines = [i.strip().decode('ISO-8859-1') for i in lines]
