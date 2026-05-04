@@ -71,7 +71,7 @@ for j in empresas:
         c += 1
         df = pd.DataFrame(lines[1:], columns = lines[0])
         df['VL_AJUSTADO'] = pd.to_numeric(df['VL_CONTA'])
-        filtro = df[df['CD_CVM'] == j] 
+        filtro = df[df['CD_CVM'] == j] #filtra empresa
         lista_df.append(filtro)
         print(f'Trabalhando com a empresa {j} e sua demonstração {k}. As dimensões são {filtro.shape} ')
     
